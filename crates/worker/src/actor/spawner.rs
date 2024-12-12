@@ -176,7 +176,10 @@ where
         W::Input: Serialize + for<'de> Deserialize<'de>,
         W::Output: Serialize + for<'de> Deserialize<'de>,
     {
-        let worker = DedicatedWorker::new(loader_path).expect("failed to spawn worker");
+        let mut options = web_sys::WorkerOptions::new();
+        options.type_(web_sys::WorkerType::Module);
+        let worker = DedicatedWorker::new_with_options(loader_path, &options)
+            .expect("failed to spawn worker");
 
         self.spawn_inner(worker)
     }

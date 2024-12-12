@@ -32,13 +32,14 @@ thiserror = "1.0.37"
 [dependencies.web-sys]
 version = "0.3"
 features = [
-    "Blob",
-    "BlobPropertyBag",
-    "DedicatedWorkerGlobalScope",
-    "MessageEvent",
-    "Url",
-    "Worker",
-    "WorkerOptions",
+  "Blob",
+  "BlobPropertyBag",
+  "DedicatedWorkerGlobalScope",
+  "MessageEvent",
+  "Url",
+  "Worker",
+  "WorkerOptions",
+  "WorkerType",
 ]
 
 [features]
